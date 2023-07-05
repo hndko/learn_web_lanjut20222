@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 05, 2023 at 07:20 AM
+-- Generation Time: Jul 05, 2023 at 09:57 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.9
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stockopname`
+-- Table structure for table `stockopnamedetail`
 --
 
-CREATE TABLE `stockopname` (
+CREATE TABLE `stockopnamedetail` (
   `noline` int NOT NULL,
   `notransaksi` int NOT NULL,
   `kodeitem` varchar(20) NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `stockopname` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `stockopname`
+-- Dumping data for table `stockopnamedetail`
 --
 
-INSERT INTO `stockopname` (`noline`, `notransaksi`, `kodeitem`, `realstock`, `idlokasi`) VALUES
+INSERT INTO `stockopnamedetail` (`noline`, `notransaksi`, `kodeitem`, `realstock`, `idlokasi`) VALUES
 (13082, 5149, 'L010100018', '190.00', 85);
 
 --
@@ -47,9 +47,9 @@ INSERT INTO `stockopname` (`noline`, `notransaksi`, `kodeitem`, `realstock`, `id
 --
 
 --
--- Indexes for table `stockopname`
+-- Indexes for table `stockopnamedetail`
 --
-ALTER TABLE `stockopname`
+ALTER TABLE `stockopnamedetail`
   ADD PRIMARY KEY (`noline`);
 COMMIT;
 
