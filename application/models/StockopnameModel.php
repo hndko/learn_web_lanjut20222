@@ -5,12 +5,12 @@ class StockopnameModel extends CI_Model
 {
     public function ambilData()
     {
-        return $this->db->get('stockopname')->result();
+        return $this->db->get('stockopnamedetail')->result();
     }
 
     public function ambilDataByID($id)
     {
-        return $this->db->get_where('stockopname', ['noline' => $id])->row();
+        return $this->db->get_where('stockopnamedetail', ['noline' => $id])->row();
     }
 
     public function tambahData()
@@ -23,7 +23,7 @@ class StockopnameModel extends CI_Model
             'idlokasi' => htmlspecialchars($this->input->post('id_lokasi'))
         ];
 
-        $this->db->insert('stockopname', $data);
+        $this->db->insert('stockopnamedetail', $data);
     }
 
     public function ubahData($id)
@@ -35,11 +35,11 @@ class StockopnameModel extends CI_Model
             'idlokasi' => htmlspecialchars($this->input->post('id_lokasi'))
         ];
 
-        $this->db->update('stockopname', $data, ['noline' => $id]);
+        $this->db->update('stockopnamedetail', $data, ['noline' => $id]);
     }
 
     public function deleteData($id)
     {
-        $this->db->delete('stockopname', ['noline' => $id]);
+        $this->db->delete('stockopnamedetail', ['noline' => $id]);
     }
 }
