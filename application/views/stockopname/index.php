@@ -8,6 +8,18 @@
                 </a>
             </div>
             <div class="card-body table-responsive">
+                <div class="row">
+                    <div class="col">
+                        <form action="" method="post">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Search keyword" autocomplete="off">
+                                <div class="input-group-append">
+                                    <input class="btn btn-outline-info" type="submit" name="submit" id="submit"></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <?php if ($this->session->flashdata('success')) : ?>
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
                         <?= $this->session->flashdata('message') ?>
@@ -28,6 +40,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php if (empty($result)) : ?>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="alert alert-danger" role="alert">
+                                        Data tidak ditemukan!
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
                         <?php foreach ($result as $res) : ?>
                             <tr>
                                 <td><?= $res->noline ?></td>
@@ -47,6 +68,7 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?= $this->pagination->create_links() ?>
             </div>
         </div>
     </div>

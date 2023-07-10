@@ -8,9 +8,22 @@ class StockopnameModel extends CI_Model
         return $this->db->get('stockopnamedetail')->result();
     }
 
+    public function ambilDataLimit($limit, $start, $keyword = null)
+    {
+        if ($keyword) {
+            $this->db->like('noline', $keyword);
+        }
+        return $this->db->get('stockopnamedetail', $limit, $start)->result();
+    }
+
     public function ambilDataByID($id)
     {
         return $this->db->get_where('stockopnamedetail', ['noline' => $id])->row();
+    }
+
+    public function countAllStockOpname()
+    {
+        return $this->db->get('stockopnamedetail')->num_rows();
     }
 
     public function tambahData()
